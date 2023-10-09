@@ -39,6 +39,7 @@ class DistanceBaseTier(models.Model):
 
 #Many-To-Many Connected table
 class DistanceBaseTierWeek(models.Model):
+    config_key = models.ForeignKey(Config, on_delete=models.CASCADE, default=1)
     distance_base_tier = models.ForeignKey(DistanceBaseTier, on_delete=models.CASCADE)
     week = models.ForeignKey(Week, on_delete=models.CASCADE)
     class Meta:
